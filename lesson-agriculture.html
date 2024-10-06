@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture and Water Management - Eco Visionaries</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f2f2f2; /* Light background */
+        }
+
+        /* Navbar Styles */
+        .hero-navbar {
+            background-color: #1e90ff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .go-back-btn {
+            padding: 10px 20px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #e67342;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section with Full-Width Banner Image */
+        .hero-section {
+            background-image: url('assets/lesson_plans/agriculture_water_management_banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            width: 100%; /* Fully expanded horizontally */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 50px 0;
+        }
+
+        /* Gradient overlay on hero */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark gradient */
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        /* Clear gradient on hover */
+        .hero-section:hover::before {
+            background: none;
+        }
+
+        .hero-section h1 {
+            font-size: 3.2rem;
+            color: white;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: white;
+            z-index: 2;
+            line-height: 1.6;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        /* Learning Objectives Section */
+        .learning-objectives {
+            background-color: #e6f7ff;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .learning-objectives h2 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .learning-objectives ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+
+        .learning-objectives li {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Key Concepts Section */
+        .key-concepts {
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .key-concepts h2 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .key-concepts p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Additional Notes in Key Concepts */
+        .key-concepts ul {
+            padding-left: 40px;
+        }
+
+        .key-concepts li {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Real-World Case Study */
+        .case-study {
+            background-color: #ffebcc;
+            padding: 40px;
+            margin: 20px;
+            border-left: 5px solid #ff7f50;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .case-study h2 {
+            font-size: 2rem;
+            color: #303030;
+            margin-bottom: 20px;
+        }
+
+        .case-study p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Image inside case study */
+        .case-study img {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hands-On Activity */
+        .activity-section {
+            padding: 40px;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .activity-section h2 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .activity-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* NASA Resources Section */
+        .nasa-resources {
+            padding: 50px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .nasa-resources h2 {
+            font-size: 2rem;
+            color: #303030;
+            margin-bottom: 30px;
+        }
+
+        .nasa-resources a {
+            color: #1e90ff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nasa-resources a:hover {
+            text-decoration: underline;
+        }
+
+        /* Take a Quiz Button */
+        .quiz-btn {
+            display: inline-block;
+            background-color: #ff7f50;
+            color: white;
+            padding: 15px 100px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-btn:hover {
+            background-color: #e67342;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="hero-navbar">
+        <div class="logo">Eco Visionaries</div>
+        <a href="lesson-plans.html" class="go-back-btn">Go Back</a>
+    </nav>
+
+    <!-- Hero Section with Full-Width Banner -->
+    <section class="hero-section">
+        <h1>Agriculture and Water Management</h1>
+        <p>This lesson focuses on sustainable agricultural practices and the importance of water management in enhancing food security and building resilience to climate change.</p>
+    </section>
+
+    <!-- Learning Objectives Section -->
+    <section class="learning-objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>Understand the relationship between agriculture and water resources.</li>
+            <li>Learn about sustainable agricultural practices that preserve water.</li>
+            <li>Explore the global impact of agriculture on water usage and food security.</li>
+        </ul>
+    </section>
+
+    <!-- Key Concepts Section with Additional Notes -->
+    <section class="key-concepts">
+        <h2>Key Concepts</h2>
+        <p><strong>Water Management:</strong> Effective management of water resources is essential for sustainable agriculture. Practices like drip irrigation, rainwater harvesting, and efficient water use technologies can help preserve water.</p>
+        <p><strong>Sustainable Agriculture:</strong> Sustainable agriculture techniques aim to produce food while maintaining the health of water sources and ecosystems. Practices include crop rotation, organic farming, and using drought-resistant crops.</p>
+        <ul>
+            <li>Water plays a crucial role in agriculture, affecting crop yield and food production.</li>
+            <li>Over-exploitation of water resources can lead to environmental degradation.</li>
+            <li>Implementing sustainable water use practices ensures long-term agricultural productivity.</li>
+        </ul>
+    </section>
+
+    <!-- Real-World Case Study Section with Image -->
+    <section class="case-study">
+        <h2>Case Study: Israel's Drip Irrigation System</h2>
+        <p>Israel is known for its innovative water management system that uses drip irrigation. This system efficiently delivers <br> water to the root zone of plants, minimizing water waste and maximizing crop yield in an arid region.</p>
+        <img src="assets/lesson_plans/israel_drip_irrigation.jpg" alt="Israel Drip Irrigation System">
+    </section>
+
+    <!-- Hands-On Activity Section -->
+    <section class="activity-section">
+        <h2>Activity: Design a Water-Efficient Farm</h2>
+        <p>Students will design a small-scale farm layout incorporating water-efficient technologies like drip irrigation and rainwater harvesting. They will choose drought-resistant crops and create a plan to ensure sustainable water use.</p>
+    </section>
+
+    <!-- NASA Resources Section -->
+    <section class="nasa-resources">
+        <hr>
+        <h2>NASA Resources</h2>
+        <p>Explore more about how NASA’s Earth observation data supports sustainable agriculture and water management.</p>
+        <a href="https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder" target="_blank">NASA EarthData: Agriculture & Water Resources</a>
+    </section>
+
+    <!-- Take a Quiz Button -->
+    <div style="text-align: center;">
+        <a href="agriculture_quiz.html" class="quiz-btn">Take a Quiz</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eco Visionaries. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

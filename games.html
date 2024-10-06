@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Eco Visionaries</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        /* Navbar Styles */
+        .hero-navbar {
+            background-color: #1e90ff; /* Same color as footer */
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 304px;
+        }
+
+        .hero-nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .hero-nav-links li {
+            margin-left: 20px; /* Consistent space between each button */
+        }
+
+        .hero-nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .hero-nav-links a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        /* Game Option Section */
+        .game-option {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .game-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .game-description {
+            flex: 2;
+        }
+
+        .game-description h2 {
+            font-size: 1.8rem;
+            color: #303030;
+        }
+
+        .game-description p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background-color: #ff7f50;
+            color: white;
+            padding: 15px 40px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            background-color: #e67342;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Push footer to bottom */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="hero-navbar">
+        <div class="logo">Eco Visionaries</div>
+        <ul class="hero-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About SDGs</a></li>
+            <li><a href="lesson-plans.html">Lesson Plans</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Game Option Section -->
+    <section class="game-option">
+        <div class="game-image">
+            <img src="assets/games/memory_card_game_icon.png" alt="Memory Card Game Icon">
+        </div>
+        <div class="game-description">
+            <h2>Memory Card Game</h2>
+            <p>
+                Test your memory and learn about the Sustainable Development Goals (SDGs) in a fun way! Flip the cards and match the pairs to uncover the SDG icons.
+            </p>
+            <a href="memory_game.html" class="play-btn">Play Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eco Visionaries. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

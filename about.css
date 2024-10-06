@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.hero-navbar {
+    background-color: #1e90ff; /* Same color as footer */
+    padding: 20px;
+    position: relative; /* Maintain position */
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin-right: 304px;
+}
+
+/* Navbar Links Styles */
+.hero-nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.hero-nav-links li {
+    margin-left: 20px; /* Keep consistent space between each button */
+}
+
+.hero-nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Hover Effect */
+.hero-nav-links a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* Introduction Section */
+.intro {
+    padding: 50px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    color: #303030;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #303030;
+    margin-top: 20px;
+}
+
+/* SDG Grid Layout */
+.sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 50px 20px; /* Added padding to the left and right */
+    text-align: center;
+}
+
+/* SDG Item Styles */
+.sdg-item {
+    background-color: #f9f9f9;
+    padding: 0; /* Remove padding to keep it tight */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* For absolute positioning of images and button */
+    margin: 0; /* Remove margin to keep it tight */
+}
+
+/* Styling for SDG Images */
+.sdg-image-container {
+    position: relative; /* Relative positioning for image swap */
+    width: 300px; /* Fixed width for the container */
+    height: 300px; /* Fixed height for the container */
+}
+
+/* SDG Images */
+.sdg-image {
+    width: 100%; /* Responsive size */
+    height: 100%; /* Ensure height is 100% to maintain size */
+    object-fit: cover; /* Cover the entire area without stretching */
+    margin-bottom: 0; /* No margin for images */
+    border-radius: 10px; /* Optional: add rounded corners */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+/* Hide the hover image by default */
+.sdg-image-hover {
+    position: absolute; /* Stack on top of the default image */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start as invisible */
+}
+
+/* Show the hover image on hover */
+.sdg-item:hover .sdg-image-default {
+    opacity: 0; /* Fade out the default image */
+}
+
+.sdg-item:hover .sdg-image-hover {
+    opacity: 1; /* Fade in the hover image */
+}
+
+/* Explore More Button Positioning */
+.explore-more {
+    display: inline-block;
+    background-color: #ff7f50; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 5px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    font-weight: bold; /* Bold text */
+    font-size: 1.2rem; /* Font size */
+    position: absolute; /* Position relative to parent container */
+    bottom: 5px; /* Position it at the bottom of the image */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 0); /* Center the button horizontally */
+    opacity: 0; /* Initially hidden */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Show the Explore More Button on hover */
+.sdg-item:hover .explore-more {
+    opacity: 1; /* Show the button on hover */
+}
+
+/* Explore More Button Hover Effect */
+.explore-more:hover {
+    background-color: #e67342; /* Darker shade on hover */
+    transform: translate(-50%, -3px); /* Slight lift effect on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}

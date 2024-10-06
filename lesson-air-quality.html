@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality - Eco Visionaries</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f2f2f2; /* Light background */
+        }
+
+        /* Navbar Styles */
+        .hero-navbar {
+            background-color: #1e90ff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .go-back-btn {
+            padding: 10px 20px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #e67342;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section with Full-Width Banner */
+        .hero-section {
+            background-image: url('assets/lesson_plans/air_quality_banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            width: 100%; /* Fully expanded horizontally */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 50px 0;
+        }
+
+        /* Gradient overlay on hero */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark gradient */
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        /* Clear gradient on hover */
+        .hero-section:hover::before {
+            background: none;
+        }
+
+        .hero-section h1 {
+            font-size: 3.2rem;
+            color: white;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: white;
+            z-index: 2;
+            line-height: 1.6;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        /* Learning Objectives Section */
+        .learning-objectives {
+            background-color: #e6f7ff;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .learning-objectives h2 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .learning-objectives ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+
+        .learning-objectives li {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Key Concepts Section */
+        .key-concepts {
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .key-concepts h2 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .key-concepts p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Additional Notes in Key Concepts */
+        .key-concepts ul {
+            padding-left: 40px;
+        }
+
+        .key-concepts li {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Real-World Case Study */
+        .case-study {
+            background-color: #ffebcc;
+            padding: 40px;
+            margin: 20px;
+            border-left: 5px solid #ff7f50;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .case-study h2 {
+            font-size: 2rem;
+            color: #303030;
+            margin-bottom: 20px;
+        }
+
+        .case-study p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Image inside case study */
+        .case-study img {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hands-On Activity Section */
+        .activity-section {
+            padding: 40px;
+            background-color: #e6f7ff;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .activity-section h2 {
+            font-size: 2rem;
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .activity-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* NASA Resources Section */
+        .nasa-resources {
+            padding: 50px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .nasa-resources h2 {
+            font-size: 2rem;
+            color: #303030;
+            margin-bottom: 30px;
+        }
+
+        .nasa-resources a {
+            color: #1e90ff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nasa-resources a:hover {
+            text-decoration: underline;
+        }
+
+        /* Take a Quiz Button */
+        .quiz-btn {
+            display: inline-block;
+            background-color: #ff7f50;
+            color: white;
+            padding: 15px 100px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-btn:hover {
+            background-color: #e67342;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="hero-navbar">
+        <div class="logo">Eco Visionaries</div>
+        <a href="lesson-plans.html" class="go-back-btn">Go Back</a>
+    </nav>
+
+    <!-- Hero Section with Full-Width Banner -->
+    <section class="hero-section">
+        <h1>Air Quality</h1>
+        <p>This lesson focuses on understanding air quality, its impact on human health and the environment, and exploring solutions to improve air quality.</p>
+    </section>
+
+    <!-- Learning Objectives Section -->
+    <section class="learning-objectives">
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>Understand the key factors affecting air quality.</li>
+            <li>Explore the sources of air pollution and its health impacts.</li>
+            <li>Identify strategies to improve air quality in local communities.</li>
+        </ul>
+    </section>
+
+    <!-- Key Concepts Section with Additional Notes -->
+    <section class="key-concepts">
+        <h2>Key Concepts</h2>
+        <p><strong>Air Quality:</strong> Air quality refers to the condition of the air within our surroundings, which can be affected by pollutants such as smoke, dust, and chemicals. Poor air quality can lead to significant health issues, including respiratory diseases and cardiovascular problems.</p>
+        <p><strong>Pollutants:</strong> Common air pollutants include particulate matter (PM), nitrogen dioxide (NO₂), sulfur dioxide (SO₂), and carbon monoxide (CO). Understanding these pollutants is crucial for developing strategies to improve air quality.</p>
+        <ul>
+            <li>High levels of air pollution can lead to smog, which negatively impacts visibility and health.</li>
+            <li>Monitoring air quality is essential for protecting public health and the environment.</li>
+            <li>Communities can take action by reducing emissions from transportation, industry, and household products.</li>
+        </ul>
+    </section>
+
+    <!-- Real-World Case Study Section with Image -->
+    <section class="case-study">
+        <h2>Case Study: The Impact of Air Pollution in Beijing</h2>
+        <p>Beijing has faced severe air pollution issues due to rapid urbanization and industrial activity. <br> The government has implemented measures to reduce emissions, including stricter vehicle emissions standards <br> and promoting electric public transportation.</p>
+        <img src="assets/lesson_plans/beijing_air_pollution.jpg" alt="Air Pollution in Beijing" />
+    </section>
+
+    <!-- Hands-On Activity Section -->
+    <section class="activity-section">
+        <h2>Activity: Conduct an Air Quality Survey</h2>
+        <p>Students will conduct a survey of air quality in their local area, identifying sources of pollution and potential improvements. They will collect data and present their findings to the class.</p>
+    </section>
+
+    <!-- NASA Resources Section -->
+    <section class="nasa-resources">
+        <hr>
+        <h2>NASA Resources</h2>
+        <p>Explore more about air quality monitoring and the technologies NASA uses to study atmospheric conditions.</p>
+        <a href="https://www.earthdata.nasa.gov/learn/pathfinders/air-quality-data-pathfinder" target="_blank">NASA EarthData: Air Quality</a>
+    </section>
+
+    <!-- Take a Quiz Button -->
+    <div style="text-align: center;">
+        <a href="air-quality_quiz.html" class="quiz-btn">Take a Quiz</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eco Visionaries. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

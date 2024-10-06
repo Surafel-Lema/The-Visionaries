@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Quiz - Eco Visionaries</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar Styles */
+        .hero-navbar {
+            background-color: #1e90ff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .go-back-btn {
+            padding: 10px 20px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #e67342;
+            transform: translateY(-3px);
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+            width: 800px;
+            margin: 50px auto;
+            padding-bottom: 20px;
+            overflow: hidden;
+            flex-grow: 1; /* Allow container to expand */
+        }
+
+        .quiz-header {
+            padding: 4rem;
+        }
+
+        h2 {
+            padding: 1rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        ul li label {
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #ff7f50;
+            color: #fff;
+            border: none;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-family: inherit;
+            padding: 1.3rem;
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e67342;
+        }
+
+        button:focus {
+            outline: none;
+            background-color: #1e90ff;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Push footer to bottom */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="hero-navbar">
+        <div class="logo">Eco Visionaries</div>
+        <a href="lesson-air-quality.html" class="go-back-btn">Go Back</a>
+    </nav>
+
+    <!-- Quiz Section -->
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question">Question Text</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_text">Answer</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_text">Answer</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_text">Answer</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_text">Answer</label>
+                </li>
+            </ul>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eco Visionaries. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const quizData = [
+            {
+                question: "What does air quality refer to?",
+                a: "The level of pollutants in the air",
+                b: "The temperature of the air",
+                c: "The humidity levels in the atmosphere",
+                d: "The presence of noise pollution",
+                correct: "a",
+            },
+            {
+                question: "Which of the following is a common air pollutant?",
+                a: "Oxygen",
+                b: "Carbon monoxide",
+                c: "Nitrogen",
+                d: "Hydrogen",
+                correct: "b",
+            },
+            {
+                question: "What is a major health impact of poor air quality?",
+                a: "Improved respiratory function",
+                b: "Increased risk of cardiovascular diseases",
+                c: "Better immune system responses",
+                d: "None of the above",
+                correct: "b",
+            },
+            {
+                question: "Which strategy can communities implement to improve air quality?",
+                a: "Encouraging more vehicle use",
+                b: "Reducing emissions from transportation",
+                c: "Increasing industrial waste",
+                d: "None of the above",
+                correct: "b",
+            },
+            {
+                question: "What is the urban heat island effect?",
+                a: "Increased agricultural yield in cities",
+                b: "Higher temperatures in urban areas compared to surrounding rural areas",
+                c: "Lower air quality in rural areas",
+                d: "None of the above",
+                correct: "b",
+            }
+        ];
+
+        const quiz = document.getElementById('quiz');
+        const answerEls = document.querySelectorAll('.answer');
+        const questionEl = document.getElementById('question');
+        const a_text = document.getElementById('a_text');
+        const b_text = document.getElementById('b_text');
+        const c_text = document.getElementById('c_text');
+        const d_text = document.getElementById('d_text');
+        const submitBtn = document.getElementById('submit');
+        
+        let currentQuiz = 0;
+        let score = 0;
+
+        loadQuiz();
+
+        function loadQuiz() {
+            deselectAnswers();
+            const currentQuizData = quizData[currentQuiz];
+            questionEl.innerText = currentQuizData.question;
+            a_text.innerText = currentQuizData.a;
+            b_text.innerText = currentQuizData.b;
+            c_text.innerText = currentQuizData.c;
+            d_text.innerText = currentQuizData.d;
+        }
+
+        function deselectAnswers() {
+            answerEls.forEach(answerEl => answerEl.checked = false);
+        }
+
+        function getSelected() {
+            let answer;
+            answerEls.forEach(answerEl => {
+                if (answerEl.checked) {
+                    answer = answerEl.id;
+                }
+            });
+            return answer;
+        }
+
+        submitBtn.addEventListener('click', () => {
+            const answer = getSelected();
+            if (answer) {
+                if (answer === quizData[currentQuiz].correct) {
+                    score++;
+                }
+                currentQuiz++;
+                if (currentQuiz < quizData.length) {
+                    loadQuiz();
+                } else {
+                    quiz.innerHTML = `
+                        <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+                        <button onclick="location.reload()">Reload</button>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

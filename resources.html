@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Eco Visionaries</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Make sure to link your CSS file -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar Styles */
+        .hero-navbar {
+            background-color: #1e90ff; /* Same color as footer */
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            position: sticky; /* Changed to sticky */
+            top: 0; /* Ensures navbar sticks to the top */
+            z-index: 2; /* Keep navbar above other content */
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-right: 304px; /* Automatically space the logo */
+        }
+
+        .hero-nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .hero-nav-links li {
+            margin-left: 20px; /* Consistent space between each button */
+        }
+
+        .hero-nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .hero-nav-links a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        /* Main Content */
+        .resources {
+            padding: 50px 20px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #303030;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Video Embed Styles */
+        .video-container {
+            display: flex;
+            align-items: flex-start; /* Align items at the start */
+            margin-bottom: 40px;
+            gap: 20px; /* Space between video and description */
+        }
+
+        .video-container iframe {
+            width: 350px; /* Set width to a smaller size */
+            height: 200px; /* Set height */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-description {
+            max-width: 400px; /* Set a max width for description */
+            color: #303030;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Resources Links */
+        .resources-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .resources-links a {
+            display: block;
+            margin: 10px 0;
+            color: #1e90ff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resources-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="hero-navbar">
+        <div class="logo">Eco Visionaries</div>
+        <ul class="hero-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About SDGs</a></li>
+            <li><a href="lesson-plans.html">Lesson Plans</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Resources Section -->
+    <section class="resources">
+        <h2>NASA Open Source Resources</h2>
+
+        <!-- Video 1 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/0pt2SxQJGNM" title="NASA ARSET: Introduction to the EO Toolkit for Sustainable Cities and Human Settlements, Part 1/3" allowfullscreen></iframe>
+            <div class="video-description">
+                <h3>Part 1: Introduction to the EO Toolkit for Sustainable Cities and Human Settlements</h3>
+                <p>This session provides an overview of Sustainable Development Goal 11 and the New Urban Agenda, emphasizing the importance of Earth observations in monitoring and informing cities’ operations and planning.</p>
+            </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/hSCqJ0BrqFY" title="NASA ARSET: Applications of the EO Toolkit to Measure and Analyze SDGs, Part 2/3" allowfullscreen></iframe>
+            <div class="video-description">
+                <h3>Part 2: Applications of the EO Toolkit to Measure and Analyze Sustainable Development Goals</h3>
+                <p>This session covers the Degree of Urbanization Tools and SDG 11 Indicators, demonstrating the POPGRID Website and Viewer for evaluating population data sets.</p>
+            </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/yJQyIOsT_ws" title="NASA ARSET: Use Cases from the National and City Level, Part 3/3" allowfullscreen></iframe>
+            <div class="video-description">
+                <h3>Part 3: Use Cases from the National and City Level</h3>
+                <p>This session presents case studies from various regions, focusing on the role of Earth observations in managing urbanization and disaster response strategies.</p>
+            </div>
+        </div>
+
+        <!-- Additional Resources Links -->
+        <div class="resources-links">
+            <h3>Additional Resources:</h3>
+            <a href="https://appliedsciences.nasa.gov/what-we-do/sustainable-development-goals" target="_blank">NASA Applied Sciences: Sustainable Development Goals</a>
+            <a href="https://www.un.org/sustainabledevelopment" target="_blank">United Nations Sustainable Development Goals</a>
+            <a href="https://dashboards.sdgindex.org/map" target="_blank">SDG Index Dashboard</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eco Visionaries. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
